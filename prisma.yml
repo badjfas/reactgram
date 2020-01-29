@@ -1,0 +1,7 @@
+#endpoint: https://eu1.prisma.sh/bjwkor-40222e/	/dev
+endpoint: https://us1.prisma.sh/bjwkor-40222e/reactgram/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ./generated/prisma-client/

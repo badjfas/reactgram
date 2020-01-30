@@ -5,11 +5,9 @@ import path from "path"
 import  {GraphQLServer}  from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
-import {sendSecretMail} from "./utils";
 
 const PORT = process.env.PORT || 4000;
 
-sendSecretMail("bjwkor@naver.com","123");
 
 const server = new GraphQLServer({schema});
 

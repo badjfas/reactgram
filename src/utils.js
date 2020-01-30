@@ -29,7 +29,7 @@ export const sendSecretMail = (address,secret) =>{
         from: "bjw@reactgram.com",
         to: address,
         subject: "Login Secret for Reactgram😎",
-        html: `Hello Your login secret is ${secret}.<br/> Copy paste on the app to Log in `
+        html: `Hello Your login secret is <strong>${secret}</strong>.<br/> Copy paste on the app to Log in `
     };
     return sendMail(email);
 }

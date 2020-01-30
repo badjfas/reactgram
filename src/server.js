@@ -1,15 +1,15 @@
-import  {GraphQLServer}  from "graphql-yoga";
 import dotenv from "dotenv"
+dotenv.config({path:path.resolve(__dirname,".env")});
 import path from "path"
-console.log(__dirname);
+
+import  {GraphQLServer}  from "graphql-yoga";
 import logger from "morgan";
 import schema from "./schema";
-
-console.log(process.env.PORT);
+import {sendSecretMail} from "./utils";
 
 const PORT = process.env.PORT || 4000;
 
-dotenv.config({path:path.resolve(__dirname,".env")});
+sendSecretMail("bjwkor@naver.com","123");
 
 const server = new GraphQLServer({schema});
 

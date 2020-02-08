@@ -5,9 +5,9 @@ type User {
   firstName: String! @default(value: "")
   lastName: String!
   bio: String!
-  likes: [Like!]!
-  posts: [Post!]!
-  comments: [Comment!]!
+  likes: [Like!]! @relation(name:"LikeOfUser",onDelete:CASCADE)
+  posts: [Post!]! @relation(name:"PostOfUser",onDelete:CASCADE)
+  comments: [Comment!]! @relation(name:"CommentOfUser",onDelete:CASCADE)
   following: [User!]! @relation(name: "FollowRelation")
   followers: [User!]! @relation(name: "FollowRelation")
   rooms: [Room!]!
@@ -17,25 +17,25 @@ type User {
 
 type Post {
   id: ID! @id
-  user: User!
-  files: [File!]!
+  user: User @relation(name:"PostOfUser")
+  files: [File!]! @relation(name:"FilesOfPost", onDelete:CASCADE)
   location: String
-  caption: String!
-  likes: [Like!]!
-  comments: [Comment!]!
+  caption: String! 
+  likes: [Like!]! @relation(name:"LikeOfPost", onDelete: CASCADE)
+  comments: [Comment!]! @relation(name:"CommentOfPost", onDelete: CASCADE)
 }
 
 type Like {
   id: ID! @id
-  user: User!
-  post: Post!
+  user: User @relation(name:"LikeOfUser")
+  post: Post @relation(name:"LikeOfPost")
 }
 
 type Comment {
   id: ID! @id
   text: String!
-  user: User!
-  post: Post!
+  user: User @relation(name:"CommentOfUser")
+  post: Post @relation(name:"CommentOfPost")
 }
 
 
@@ -43,7 +43,7 @@ type Comment {
 type File {
   id: ID! @id
   Url: String!
-  post: Post!
+  post: Post @relation(name:"FilesOfPost")
 }
 
 type Room {

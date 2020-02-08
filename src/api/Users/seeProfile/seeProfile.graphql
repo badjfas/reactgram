@@ -1,5 +1,5 @@
 type Query{
     seeProfile(
         id:String!
-        ):User!
+        ):UserProfile!
 }

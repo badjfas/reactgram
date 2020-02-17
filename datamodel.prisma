@@ -5,7 +5,7 @@ type User {
   email: String! @unique
   firstName: String! @default(value: "")
   lastName: String!
-  bio: String!
+  bio: String
   likes: [Like!]! @relation(name:"LikeOfUser",onDelete:CASCADE)
   posts: [Post!]! @relation(name:"PostOfUser",onDelete:CASCADE)
   comments: [Comment!]! @relation(name:"CommentOfUser",onDelete:CASCADE)

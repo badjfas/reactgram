@@ -774,7 +774,7 @@ export interface UserCreateWithoutCommentsInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   likes?: Maybe<LikeCreateManyWithoutUserInput>;
   posts?: Maybe<PostCreateManyWithoutUserInput>;
   following?: Maybe<UserCreateManyWithoutFollowersInput>;
@@ -819,7 +819,7 @@ export interface UserCreateWithoutPostsInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   likes?: Maybe<LikeCreateManyWithoutUserInput>;
   comments?: Maybe<CommentCreateManyWithoutUserInput>;
   following?: Maybe<UserCreateManyWithoutFollowersInput>;
@@ -887,7 +887,7 @@ export interface UserCreateWithoutLikesInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   posts?: Maybe<PostCreateManyWithoutUserInput>;
   comments?: Maybe<CommentCreateManyWithoutUserInput>;
   following?: Maybe<UserCreateManyWithoutFollowersInput>;
@@ -937,7 +937,7 @@ export interface UserCreateWithoutFollowersInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   likes?: Maybe<LikeCreateManyWithoutUserInput>;
   posts?: Maybe<PostCreateManyWithoutUserInput>;
   comments?: Maybe<CommentCreateManyWithoutUserInput>;
@@ -984,7 +984,7 @@ export interface UserCreateInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   likes?: Maybe<LikeCreateManyWithoutUserInput>;
   posts?: Maybe<PostCreateManyWithoutUserInput>;
   comments?: Maybe<CommentCreateManyWithoutUserInput>;
@@ -1008,7 +1008,7 @@ export interface UserCreateWithoutFollowingInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   likes?: Maybe<LikeCreateManyWithoutUserInput>;
   posts?: Maybe<PostCreateManyWithoutUserInput>;
   comments?: Maybe<CommentCreateManyWithoutUserInput>;
@@ -2026,7 +2026,7 @@ export interface UserCreateWithoutRoomsInput {
   email: String;
   firstName?: Maybe<String>;
   lastName: String;
-  bio: String;
+  bio?: Maybe<String>;
   likes?: Maybe<LikeCreateManyWithoutUserInput>;
   posts?: Maybe<PostCreateManyWithoutUserInput>;
   comments?: Maybe<CommentCreateManyWithoutUserInput>;
@@ -2305,7 +2305,7 @@ export interface User {
   email: String;
   firstName: String;
   lastName: String;
-  bio: String;
+  bio?: String;
   loginSecret?: String;
 }
 
@@ -3514,7 +3514,7 @@ export interface UserPreviousValues {
   email: String;
   firstName: String;
   lastName: String;
-  bio: String;
+  bio?: String;
   loginSecret?: String;
 }
 

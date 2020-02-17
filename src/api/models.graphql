@@ -1,46 +1,50 @@
 type User {
-  id: ID! 
-  avatar:String
-  userName: String! 
-  email: String! 
-  firstName: String 
+  id: ID!
+  avatar: String
+  userName: String!
+  email: String!
+  firstName: String
   lastName: String
   fullName: String
+  isFollowing: Boolean!
+  isSelf: Boolean!
   bio: String
-  likes: [Like!]!
-  posts: [Post!]!
-  comments: [Comment!]!
-  isFollowing:Boolean!
-  isSelf:Boolean!
   following: [User!]!
-  followers: [User!]! 
+  followingCount: Int!
+  followers: [User!]!
+  followersCount: Int!
+  posts: [Post!]!
+  postsCount: Int!
+  likes: [Like!]!
+  comments: [Comment!]!
   rooms: [Room!]!
-  loginSecret: String
-  createAt:String
-  updateAt:String
+  loginSecret: String!
+  createAt: String
+  updateAt: String
 }
 
 
 type Post {
-  id: ID! 
-  user: User!
-  files: [File!]!
+  id: ID!
   location: String
   caption: String!
+  user: User!
+  files: [File!]!
   likes: [Like!]!
   comments: [Comment!]!
-  isLiked:Boolean!
-  likeCount:Int!
-  createAt:String
-  updateAt:String
+  isLiked: Boolean!
+  likeCount: Int!
+  commentCount: Int!
+  createdAt:String
+  updatedAt:String
 }
 
 type Like {
   id: ID! 
   user: User!
   post: Post!
-  createAt:String
-  updateAt:String
+  createdAt:String
+  updatedAt:String
 }
 
 type Comment {
@@ -48,8 +52,8 @@ type Comment {
   text: String!
   user: User!
   post: Post!
-  createAt:String
-  updateAt:String
+  createdAt:String
+  updatedAt:String
 }
 
 
@@ -58,16 +62,16 @@ type File {
   id: ID! 
   Url: String!
   post: Post!
-  createAt:String
-  updateAt:String
+  createdAt:String
+  updatedAt:String
 }
 
 type Room {
   id: ID! 
   participants: [User!]!  
   messages: [Message!]!
-  createAt:String
-  updateAt:String
+  createdAt:String
+  updatedAt:String
 }
 
 type Message {
@@ -76,14 +80,14 @@ type Message {
   from: User! 
   to: User! 
   room: [Room!]!
-  createAt:String
-  updateAt:String
+  createdAt:String
+  updatedAt:String
 }
 
 type UserProfile{
   user:User!
   post:[Post!]!
-  createAt:String
-  updateAt:String
+  createdAt:String
+  updatedAt:String
 }
 

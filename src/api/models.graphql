@@ -19,8 +19,8 @@ type User {
   comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String!
-  createAt: String
-  updateAt: String
+  createdAt: String
+  updatedAt: String
 }
 
 

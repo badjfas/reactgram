@@ -30,7 +30,7 @@ export const sendSecretMail = (address,secret) =>{
         from: "bjw@reactgram.com",
         to: address,
         subject: "Login Secret for Reactgram😎",
-        html: `Hello Your login secret is <strong>${secret}</strong>.<br/> Copy paste on the app to Log in `
+        html: `안녕하세요 당신의 로그인 코드는 ${secret}</strong>입니다.<br/> 복사 붙여넣기 해주세요.`
     };
     return sendMail(email);
 }

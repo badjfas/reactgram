@@ -8,7 +8,7 @@ export default{
             //leagcy code
             //return  await prisma.post({id}).$fragment(FULL_POST_FRAGMENT);
             //new code(not use fragement)
-            return  await prisma.post({id});
+            return  prisma.post({id});
         }
     }
 }

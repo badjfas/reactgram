@@ -1,4 +1,10 @@
 export const nouns = [
+"1"
+];
+export const adjectives = [
+ "1"
+];
+export const noun = [
 "morning",
 "statement",
 "airplane",
@@ -501,7 +507,7 @@ export const nouns = [
 "grandfather"
 ]
 
-export const adjectives= [
+export const adjective= [
 "brupt",
 "godly",
 "quarrelsome",
